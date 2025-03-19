@@ -6,7 +6,7 @@ This is a backend API for managing trips, vehicles, drivers, and maintenance rec
 
 1️⃣ Clone the Repository:
 
-git clone https://github.com/navinjaani/trip_management.git
+git clone https://github.com/navinkumarparmar/Fleet_Management.git
 
 
 2️⃣ Install Dependencies:

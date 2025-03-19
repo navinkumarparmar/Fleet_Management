@@ -1,0 +1,742 @@
+{
+	"info": {
+		"_postman_id": "1b3902a5-f11a-4455-98a1-26d352b41299",
+		"name": "fleet_managment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28621334",
+		"_collection_link": "https://speeding-sunset-151948.postman.co/workspace/task_data~6f735697-751c-4b98-8c50-f5d885f1c752/collection/28621334-1b3902a5-f11a-4455-98a1-26d352b41299?action=share&source=collection_link&creator=28621334"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\",\r\n    \"email\": \"admin123@gmail.com\",\r\n    \"password\":\"admin123\",\r\n    \"role\":\"admin\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"email\": \"admin123@gmail.com\",\r\n    \"password\":\"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5MTE1MywiZXhwIjoxNzQyNDc3NTUzfQ.L7MxFzZv2aw_V7P3dOHbBBh0CGMHOU_898LLzuMh4Wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"registrationNumber\": \"MH12AB1010\",\r\n  \"model\": \"demo model\",\r\n  \"type\": \"Mini car1\",\r\n  \"capacity\": 1000,\r\n  \"status\": \"active\",\r\n  \"documents\": [\r\n    {\r\n      \"name\": \"RC\",\r\n      \"url\": \"https://example.com/rc.pdf\"\r\n    }\r\n    \r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/vehicle/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vehicle",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5MTE1MywiZXhwIjoxNzQyNDc3NTUzfQ.L7MxFzZv2aw_V7P3dOHbBBh0CGMHOU_898LLzuMh4Wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/vehicle/delete/67dac83bc9ba1ebd3676f44c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vehicle",
+								"delete",
+								"67dac83bc9ba1ebd3676f44c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5MTE1MywiZXhwIjoxNzQyNDc3NTUzfQ.L7MxFzZv2aw_V7P3dOHbBBh0CGMHOU_898LLzuMh4Wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registrationNumber\":\"MH12AB12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/vehicle/update/67dac7cf7fad80a217b04716",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vehicle",
+								"update",
+								"67dac7cf7fad80a217b04716"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getbyid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5MTE1MywiZXhwIjoxNzQyNDc3NTUzfQ.L7MxFzZv2aw_V7P3dOHbBBh0CGMHOU_898LLzuMh4Wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/vehicle/listByid/67dac7cf7fad80a217b04716",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vehicle",
+								"listByid",
+								"67dac7cf7fad80a217b04716"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "driver",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Ravi Kumar 2\",\r\n  \"licenseNumber\": \"DL123456788329\",\r\n  \"contactInfo\": \"9876543210\",\r\n  \"assignedVehicle\": \"67dad0891f0aef49870541a0\",\r\n  \"status\": \"available\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/driver/add",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"driver",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/driver/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"driver",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/driver/67dad0a71f0aef49870541a7",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"driver",
+								"67dad0a71f0aef49870541a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"updated user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/driver/update/67dad0a71f0aef49870541a7",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"driver",
+								"update",
+								"67dad0a71f0aef49870541a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/driver/delete/67dad0a71f0aef49870541a7",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"driver",
+								"delete",
+								"67dad0a71f0aef49870541a7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trip",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicle\": \"67dac7cf7fad80a217b04716\",\r\n  \"driver\": \"67dace777f235ee9e4483c47\",\r\n  \"route\": \"67dad817a78cfabb7634ba71\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/trip/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"trip",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicle\": \"67dac7cf7fad80a217b04716\",\r\n  \"driver\": \"67dace777f235ee9e4483c47\",\r\n  \"route\": \"67dad817a78cfabb7634ba71\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/trip/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"trip",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicle\": \"67dac7cf7fad80a217b04716\",\r\n  \"driver\": \"67dace777f235ee9e4483c47\",\r\n  \"route\": \"67dad817a78cfabb7634ba71\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/trip/tripbyid/67dad9975cd1f4cdda12caca",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"trip",
+								"tripbyid",
+								"67dad9975cd1f4cdda12caca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "startTrip",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/trip/start/67dad9975cd1f4cdda12caca",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"trip",
+								"start",
+								"67dad9975cd1f4cdda12caca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "endTrip",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/trip/start/67dad9975cd1f4cdda12caca",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"trip",
+								"start",
+								"67dad9975cd1f4cdda12caca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "route",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "maintence",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicle\": \"67dac7cf7fad80a217b04716\",\r\n  \"maintenanceType\": \"Oil Change\",\r\n  \"description\": \"Changed engine oil and air filter\",\r\n  \"maintenanceDate\": \"2024-03-19\",\r\n  \"nextDueDate\": \"2024-06-19\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/maintenance/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"maintenance",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/maintenance/list/67dac7cf7fad80a217b04716",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"maintenance",
+								"list",
+								"67dac7cf7fad80a217b04716"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/maintenance/updateStatus/67dae0812b8080aeee2724f9",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"maintenance",
+								"updateStatus",
+								"67dae0812b8080aeee2724f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upComming",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGFjNTM5OGM2ZTI1YzdjNmQ2N2ZjZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjM5Mjc5NSwiZXhwIjoxNzQyNDc5MTk1fQ.ajKfl2y4I-VbrXX9xKNYPpoko5LcmIldb1zJicaxbS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/maintenance/updateStatus/67dae0812b8080aeee2724f9",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"maintenance",
+								"updateStatus",
+								"67dae0812b8080aeee2724f9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
